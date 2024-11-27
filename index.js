@@ -47,6 +47,7 @@ app.delete('/users/:id', async(req,res)=>{
   console.log('Please delete from database', id);
   const query= {_id:new ObjectId(id)};
   const result = await usersCollection.deleteOne(query)
+  res.send(result)
 })
 
 // post or create
